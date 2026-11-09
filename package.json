@@ -3,23 +3,31 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "wdio run ./wdio.conf.js"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "appium": "^2.14.0",
-    "chai": "^5.1.2",
-    "wdio-appium-service": "^0.2.3"
-  },
   "devDependencies": {
-    "@wdio/appium-service": "^9.5.1",
+    "@wdio/appium-service": "^9.33.1",
     "@wdio/cli": "^9.7.1",
     "@wdio/local-runner": "^9.7.1",
     "@wdio/mocha-framework": "^9.6.4",
     "@wdio/spec-reporter": "^9.6.3",
-    "appium-uiautomator2-driver": "^3.10.0"
+    "appium": "^2.19.0",
+    "appium-uiautomator2-driver": "^3.10.0",
+    "webdriverio": "^9.7.1"
   },
-  "description": ""
+  "description": "Prerequisites: Install Node.js (v14.x or later): Download Node.js Install Appium: Run npm install -g appium in the terminal to install Appium globally. Install Appium Desktop: Download Appium Desktop (optional for GUI-based debugging). Install Android Studio: Download and set up Android Studio to use Android emulators. Install Appium Drivers: For mobile automation, install Appium drivers (e.g., appium@next for the latest version).",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranavkumarsarma/Appium-Sample.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pranavkumarsarma/Appium-Sample/issues"
+  },
+  "homepage": "https://github.com/pranavkumarsarma/Appium-Sample#readme"
 }

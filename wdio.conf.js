@@ -45,7 +45,8 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    // Use one local device session unless you have multiple devices configured.
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -54,13 +55,13 @@ exports.config = {
     capabilities: [{
         // capabilities for local Appium web tests on an Android Emulator
         platformName: 'Android',
-        'appium:deviceName': 'Medium Phone API 35',
-        'appium:platformVersion': '15.0',
+        'appium:deviceName': process.env.ANDROID_DEVICE_NAME || 'Android Emulator',
+        ...(process.env.ANDROID_DEVICE_UDID ? { 'appium:udid': process.env.ANDROID_DEVICE_UDID } : {}),
+        ...(process.env.ANDROID_PLATFORM_VERSION ? { 'appium:platformVersion': process.env.ANDROID_PLATFORM_VERSION } : {}),
         'appium:automationName': 'UiAutomator2',
-        'appium:app': '/Users/mngsh/Desktop/Appium/Apps/hiver.apk', // Replace with your APK path
-        'appium:appPackage': 'com.hiverhq.app',
-        // 'appium:appActivity': 'com.example.myapp.MainActivity',
-        'appium:noReset': true, // Keeps the app's state betwen tests
+        'appium:app': '/usr/local/src/Appium-Sample/iver_3.2.2_APKPure.apk',
+        'appium:appPackage': process.env.ANDROID_APP_PACKAGE || 'com.hiverhq.app',
+        'appium:noReset': true,
     }],
 
     //
